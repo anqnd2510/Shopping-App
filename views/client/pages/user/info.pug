@@ -1,0 +1,21 @@
+extends ../../layouts/default.pug
+include ../../mixins/box-head.pug
+
+block main 
+    .container.my-3 
+        .row 
+            .col-12 
+                +box-head("Thông tin tài khoản")
+        .row
+            .col-12
+                if (user.avatar)
+                    img(src=user.avatar width="150px" class="mb-3")
+                else
+                    img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMrnOAFatUgb6Bxju0BqWXYj47PetD9lgI6Q1JRb0X3HBuIn9hZPwy3mfiAg&s" width="150px" class="mb-3")
+
+                if (user.fullName)
+                    p Họ tên: <b>#{user.fullName}</b>
+
+                if (user.email)
+                    p Email: <b>#{user.email}</b>
+

@@ -1,0 +1,19 @@
+extends ../../layouts/default.pug
+
+block main
+    if (role.title)
+        h1(class="mb-4") #{role.title}
+
+
+
+    if (role.description)
+        b Mô tả:
+        div(class="mb-4") !{role.description}
+    if(role.permissions.includes("role_edit"))
+        a(
+            href=`${prefixAdmin}/role/edit/${role.id}`
+            class="btn btn-warning"
+            ) Chỉnh sửa
+
+    script(src="/admin/js/productAll.js")
+    script(src="/admin/js/script.js")

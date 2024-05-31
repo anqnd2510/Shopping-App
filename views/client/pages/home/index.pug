@@ -1,0 +1,89 @@
+extends ../../layouts/default.pug
+include ../../mixins/box-head.pug
+include ../../mixins/product-layout.pug
+
+block main
+    .main-banner#top
+        .container-fluid
+            .row
+                .col-lg-6
+                    .left-content
+                        .thumb
+                            .inner-content
+                                h4 We Are DuyAnShop
+                                span Awesome, modern & creative clothes
+                                .main-border-button
+                                    a(href="/product") Purchase Now!
+                            img(src="./images/left-banner-image.jpg", alt="")
+                .col-lg-6
+                    .right-content
+                        .row
+                            .col-lg-6
+                                .right-first-image
+                                    .thumb
+                                        .inner-content
+                                            h4 Women
+                                            span Best Clothes For Women
+                                        .hover-content
+                                            .inner
+                                                h4 Women
+                                                p Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
+                                                .main-border-button
+                                                    a(href="#") Discover More
+                                        img(src="./images/baner-right-image-01.jpg")
+                            .col-lg-6
+                                .right-first-image
+                                    .thumb
+                                        .inner-content
+                                            h4 Men
+                                            span Best Clothes For Men
+                                        .hover-content
+                                            .inner
+                                                h4 Men
+                                                p Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
+                                                .main-border-button
+                                                    a(href="#") Discover More
+                                        img(src="./images/baner-right-image-02.jpg")
+                            .col-lg-6
+                                .right-first-image
+                                    .thumb
+                                        .inner-content
+                                            h4 Kids
+                                            span Best Clothes For Kids
+                                        .hover-content
+                                            .inner
+                                                h4 Kids
+                                                p Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
+                                                .main-border-button
+                                                    a(href="#") Discover More
+                                        img(src="./images/baner-right-image-03.jpg")
+                            .col-lg-6
+                                .right-first-image
+                                    .thumb
+                                        .inner-content
+                                            h4 Accessories
+                                            span Best Trend Accessories
+                                        .hover-content
+                                            .inner
+                                                h4 Accessories
+                                                p Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
+                                                .main-border-button
+                                                    a(href="#") Discover More
+                                        img(src="./images/baner-right-image-04.jpg")
+    //- ***** Product Featured Area Starts *****
+    section.section#product
+        .container
+            .row
+                .col-lg-6
+                    .section-heading
+                        h2 Product's Feartured
+            +product-grid(productsFeatured)
+
+    //- ***** Product Latest Area Starts *****
+    section.section#product
+        .container
+            .row
+                .col-lg-6
+                    .section-heading
+                        h2 Product's Latest
+            +product-grid(productsLatest)                                

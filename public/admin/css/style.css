@@ -1,0 +1,445 @@
+/* Header */
+.header {
+  background-color: #202020;
+  color: #fff;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header .inner-logo a {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+/* End Header */
+
+/* Body */
+.body .sider {
+  width: 150px;
+  background: #323232;
+  color: #fff;
+  height: calc(100vh - 56px);
+  position: fixed;
+  top: 56px;
+  left: 0;
+}
+
+.body .main {
+  margin: 15px;
+  position: relative;
+  left: 150px;
+  width: calc(100% - 180px);
+}
+/* End Body */
+
+/* Sider */
+.sider {
+  background-color: #323232;
+  color: #fff;
+  height: 100%;
+}
+
+.inner-menu {
+  padding: 20px;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #9e9797;
+  font-weight: bolder;
+}
+/* End Sider */
+
+/* Filter Status */
+.btn.btn-sm {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.btn.btn-outline-success {
+  color: #323232;
+  background-color: transparent;
+  border: 1px solid #323232;
+}
+
+.btn.btn-outline-success:hover {
+  color: #fff;
+  background-color: #323232;
+  border: 1px solid #323232;
+}
+
+.btn.active {
+  background-color: #323232;
+  border-color: #323232;
+  color: #fff;
+}
+/* End Filter Status */
+
+/* Css for Button Detail, Edit, Delete */
+td a,
+td .btn {
+    margin: 5px;
+}
+
+/* Button Styles */
+.btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #ccc;
+    color: #333;
+    border-color: #ccc;
+}
+
+.btn-secondary:hover {
+    background-color: #ddd;
+    border-color: #ddd;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+    border-color: #ffc107;
+}
+
+.btn-warning:hover {
+    background-color: #ffa300;
+    border-color: #ffa300;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c8233c;
+    border-color: #c8233c;
+}
+
+/* Link Styles */
+td a {
+  text-decoration: none;
+  color: #333;
+}
+
+td a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+/* Css for Button Detail, Edit, Delete */
+
+/* Search */
+#form-search {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #323232;
+  border-radius: 5px;
+}
+
+.input-group-append .btn-success {
+  background-color: #323232;
+  border: 1px solid #323232;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+}
+
+.input-group-append .btn-success:hover {
+  background-color: #1f1f1f;
+  border: 1px solid #1f1f1f;
+  color: #fff;
+}
+/* End Search */
+
+/* Pagination */
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+ul.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+
+li.page-item {
+  margin: 0 5px;
+}
+
+button.page-link {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #323232;
+  color: #fff;
+  border: 1px solid #323232;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.page-link:hover {
+  background-color: #1f1f1f;
+  border-color: #1f1f1f;
+}
+
+li.page-item.active button.page-link {
+  background-color: #1f1f1f;
+  border-color: #1f1f1f;
+}
+/* End Pagination */
+
+/* Show Alert */
+[show-alert] {
+  position: fixed;
+  top: 70px;
+  right: 15px;
+  z-index: 9999;
+  background-color: #d4edda;
+  color: #3c763d; 
+  border-color: #c3e6cb; 
+}
+
+[show-alert].alert-hidden {
+  animation-name: alert-hidden;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); 
+}
+
+@keyframes alert-hidden {
+  from {
+    right: 15px;
+  }
+  to {
+    right: -100%;
+    display: none;
+  }
+}
+
+[show-alert] [close-alert] {
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 10px;
+  background: rgba(255, 255, 255, 0.76); 
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 50%;
+}
+/* End Show Alert */
+
+
+
+/* preview image */
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+}
+
+/* Inputs and Select */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+}
+
+/* Upload Image */
+.upload-image {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.upload-image input[type="file"] {
+  margin-top: 10px;
+}
+
+.upload-image-preview {
+  max-width: 200px;
+  max-height: 200px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.close-preview-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.close-preview-button:hover {
+  background-color: #555;
+}
+
+/* Submit Button */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+/* end upload image preview */
+
+
+
+/* Form Change Multi Status */
+.d-flex {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px; 
+  align-items: center; 
+}
+
+.form-group {
+  margin-bottom: 10px; 
+}
+
+select,
+input,
+button {
+  padding: 10px 15px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit; 
+  font-size: 16px; 
+}
+
+select:hover,
+input:hover,
+button:hover {
+  border-color: #007bff; 
+  cursor: pointer; 
+}
+
+button {
+  background-color: #007bff; 
+  color: #fff; 
+}
+
+select {
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
+  background-position-x: 100%;
+  background-repeat: no-repeat;
+}
+/* End Form Change Multi Status */
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+  margin-top: 2px;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    display: inline-block;
+  }
+
+  td img {
+    width: 80px;
+    height: auto;
+  }
+}
+
+/* upload image preview */
+
+/* chua css duoc cai image preview */
+
+
+/* Detail Page */
+/* Chua CSS trang chi tiet san pham */
+
+/* End Detail Page */

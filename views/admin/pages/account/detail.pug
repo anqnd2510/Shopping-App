@@ -1,0 +1,32 @@
+extends ../../layouts/default.pug
+
+
+block main
+    h1(class="mb-4") Thông tin cá nhân
+
+    if (account.avatar)
+        img(src=account.avatar width="150px" class="mb-3")
+    else
+        img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMrnOAFatUgb6Bxju0BqWXYj47PetD9lgI6Q1JRb0X3HBuIn9hZPwy3mfiAg&s" width="150px" class="mb-3")
+
+    if (account.fullName)
+        p Họ tên: <b>#{account.fullName}</b>
+
+    if (account.email)
+        p Email: <b>#{account.email}</b>
+
+    if (account.phone)
+        p Số điện thoại: <b>#{account.phone}</b>
+
+    p 
+        span Trạng thái: 
+        span
+            <b>#{user.status === "active" ? "Active": "InActive"}</b>
+
+    if (role.title)
+        p Phân quyền: <b>#{role.title}</b>
+
+    a(
+	    href=`${prefixAdmin}/account/edit/${account.id}`
+	    class="btn btn-primary"
+	) Chỉnh sửa thông tin

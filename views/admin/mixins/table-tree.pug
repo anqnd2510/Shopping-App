@@ -1,0 +1,66 @@
+mixin table-tree(items, level = 1)
+    each item, index in items
+        - const prefix = Array(level + 1).join("-- ")
+        tr
+            td 
+                input(
+                    type="checkbox"
+                    name="id"
+                    value=item.id
+                )
+            td #{item.index}
+            td 
+                img(
+                    src=item.thumbnail
+                    alt=item.title
+                    width="100px"
+                    height="auto"
+                )
+            td #{prefix}#{item.title}
+            td
+                input(
+                    type="number"
+                    value=item.position
+                    style="width: 80px"
+                    min="1"
+                    name="position"
+                )
+            td
+                if(role.permissions.includes("products-type_edit"))
+                    if(item.status == "active")
+                        a(
+                            href="javascript:;"
+                            data-status=item.status
+                            data-id=item.id
+                            button-change-status
+                            class="badge badge-success"
+                        ) Active
+                    else 
+                        a(
+                            href="javascript:;"
+                            data-status=item.status
+                            data-id=item.id
+                            button-change-status 
+                            class="badge badge-danger"
+                        ) Inactive  
+                //- chỉ show ra là hoạt động hay dừng hoạt động
+                td  
+                    a(
+                        href=`${prefixAdmin}/products-type/detail/${item.id}`
+                        class="btn btn-secondary btn-sm"
+                    ) Detail
+                    if(role.permissions.includes("products-type_edit"))
+                        a(
+                            href=`${prefixAdmin}/products-type/edit/${item.id}`
+                            class="btn btn-warning btn-sm"
+                        ) Edit
+                    if(role.permissions.includes("products-type_delete"))
+                        button( 
+                            class="btn btn-danger btn-sm ml-1"
+                            button-delete
+                            data-id=item.id
+                        ) Delete 
+        if item.children && item.children.length > 0
+            +table-tree(item.children, level + 1)
+    
+    

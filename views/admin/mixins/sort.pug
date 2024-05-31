@@ -1,0 +1,21 @@
+mixin sort()
+    div(sort)
+        select(
+            class="form-control"
+            name="sort"
+            sort-select
+        )
+            option(value="position-desc") Vị trí giảm dần 
+            option(value="position-asc") Vị trí tăng dần 
+            option(value="price-desc") Giá giảm dần 
+            option(value="price-asc") Giá tăng dần 
+            option(value="title-desc") Tiêu đề A - Z 
+            option(value="title-asc") Tiêu đề Z - A
+            //- option(value="category-female") Trang phục nữ 
+            //- option(value="category-male") Trang phục nam 
+            //- option(value="category-children") Trang phục trẻ con
+            //- do nam, do nu, do cho tre em
+        button(
+            class="btn btn-danger mt-2"
+            sort-clear
+            ) Clear

@@ -1,0 +1,22 @@
+.sider 
+    .inner-menu
+        ul 
+            li 
+                a(href=`${prefixAdmin}/dashboard`) Tổng quan
+            if(role.permissions.includes("products-type_view"))
+                li 
+                    a(href=`${prefixAdmin}/products-type`) Danh mục trang phục 
+            if(role.permissions.includes("product_view"))
+                li 
+                    a(href=`${prefixAdmin}/product`) Danh sách trang phục
+            if(role.permissions.includes("role_view"))
+                li 
+                    a(href=`${prefixAdmin}/role`) Nhóm quyền
+            if(role.permissions.includes("role_permission"))
+                li 
+                    a(href=`${prefixAdmin}/role/permission`) Phân quyền
+            if(role.permissions.includes("account_view"))
+                li 
+                    a(href=`${prefixAdmin}/account`) Danh sách tài khoản
+            li 
+                a(href=`${prefixAdmin}/setting/general`) Cài đặt chung

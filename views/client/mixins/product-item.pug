@@ -1,0 +1,9 @@
+mixin product-item(item)
+    .col-4.mb-3
+        .item
+            .inner-image
+                img(src=item.thumbnail, alt=item.title)
+            .down-content
+                h4.inner-title 
+                    a(href=`/product/detail/${item.slug}`) #{item.title}
+                span $#{item.priceNew}

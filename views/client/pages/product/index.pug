@@ -1,0 +1,35 @@
+extends ../../layouts/default.pug
+include ../../mixins/box-head.pug
+
+block main
+    .section#products
+        .container
+            .row
+                .col-lg-12
+                    .section-heading
+                        h2 Our Latest Products 
+                        span Check out all of our products.
+
+        .container            
+            .row
+                each item in products
+                    .col-lg-4
+                        .inner-item
+                            a(href=`/product/detail/${item.slug}`)
+                                .item
+                                    .thumb
+                                        .hover-contentent
+                                            img(
+                                                src=item.thumbnail, 
+                                                alt=item.title
+                                                )
+                                            if(item.featured == "1")
+                                                .inner-featured Nổi bật
+                                        .down-content
+                                            h4 #{item.title}
+                                            h3
+                                            .inner-price-old #{item.price}$
+                                            if(item.discountPercentage > 0 )
+                                                .inner-discount #{item.discountPercentage}%
+                                                .inner-price-new #{item.priceNew}$
+

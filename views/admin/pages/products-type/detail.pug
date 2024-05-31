@@ -1,0 +1,35 @@
+extends ../../layouts/default.pug
+
+block main
+    if (productsType.title)
+        h1(class="mb-4") #{productsType.title}
+
+    if (productsType.thumbnail)
+        div(class="mb-4")
+            img(
+                src=productsType.thumbnail
+                style="width: 100px"
+            )
+
+    if (productsType.status)
+        div(class="mb-4")
+            span Trạng thái:
+            if (productsType.status === "active")
+                span(class="badge badge-success") Hoạt động
+            else
+                span(class="badge badge-danger") Dừng hoạt động
+
+    if (productsType.position)
+        div(class="mb-4") Vị trí: <b>#{productsType.position}</b>
+
+    if (productsType.description)
+        div(class="mb-4") !{productsType.description}
+    if(role.permissions.includes("products-type_edit"))
+        a(
+            href=`${prefixAdmin}/products-type/edit/${productsType.id}`
+            class="btn btn-warning"
+            ) Chỉnh sửa
+
+    script(src="/admin/js/productAll.js")
+    script(src="/admin/js/script.js")
+

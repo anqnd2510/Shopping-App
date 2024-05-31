@@ -1,0 +1,12 @@
+extends ../../layouts/default.pug
+include ../../mixins/box-head.pug
+include ../../mixins/product-layout.pug
+
+block main 
+    section.section#product
+        .container
+            .row
+                .col-lg-6
+                    .section-heading
+                        h2 Product's Search
+            +product-grid(products)

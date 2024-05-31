@@ -1,0 +1,75 @@
+extends ../../layouts/default.pug
+include ../../mixins/box-head.pug
+include ../../mixins/show-alert.pug
+
+block main
+    +alert-success(2000)
+
+    .section#product
+        .container
+
+            button(
+                class="previous"
+                button-go-back
+            ) Previous
+            
+            .row
+                .col-lg-8
+                    .left-images
+                        img(
+                            src=product.thumbnail
+                            )                  
+                .col-lg-4
+                    .right-content
+                        if (product.title)
+                            h1.mb-4 #{product.title}
+
+                        if (product.type)
+                            div(class="inner-category")
+                                span Danh mục: 
+                                a(href=`/product/${product.type.slug}`) #{product.type.title}
+
+                        if (product.stock)
+                            div(class="inner-stock") Còn lại <span>#{product.stock}</span> sản phẩm
+                        
+                        if (product.priceNew)
+                            span.price <b>#{product.priceNew}$</b>
+
+                        if (product.discountPercentage)
+                            span.discountpercentage Giảm giá: <b>#{product.discountPercentage}%</b>
+                        
+
+                        if (product.description)
+                            div.description !{product.description}
+                        
+                        
+                        .quantity-content
+                            .left-content
+                                h6 No. of Orders
+                            .right-content
+                                //- .quantity.buttons_added
+                                //-     input(type="button", value="-", class="minus")
+                                //-     input(type="number", step="1", min="1", max="", name="quantity", value="1", title="Qty", class="input-text qty text", size="4", pattern="", inputmode="")
+                                //-     input(type="button", value="+", class="plus")
+                        .total
+                            h4 Total: $210.00
+                            .main-border-button
+                                form(
+                                    action=`/cart/add/${product.id}`
+                                    method="POST"
+                                )
+                                    input(
+                                        class="form-control mb-2"
+                                        type="number"
+                                        name="quantity"
+                                        value="1"
+                                        min="1"
+                                        max=product.stock
+                                    )
+                                    button(
+                                        type="submit"
+                                        class="btn btn-success btn-block"
+                                    ) Add To Cart
+
+
+
